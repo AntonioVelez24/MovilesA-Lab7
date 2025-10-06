@@ -1782,7 +1782,7 @@ GameObject:
   - component: {fileID: 844304991}
   - component: {fileID: 844304990}
   m_Layer: 5
-  m_Name: ChangeNameButton
+  m_Name: ApplyNameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2389,7 +2389,7 @@ GameObject:
   - component: {fileID: 950470380}
   - component: {fileID: 950470379}
   m_Layer: 5
-  m_Name: Placer
+  m_Name: LevelPlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3481,7 +3481,7 @@ GameObject:
   - component: {fileID: 1380802443}
   - component: {fileID: 1380802442}
   m_Layer: 5
-  m_Name: Placer (1)
+  m_Name: PlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4318,7 +4318,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -4452,6 +4452,67 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1853444144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853444146}
+  - component: {fileID: 1853444145}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1853444145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853444144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0bd90767cbf95d4a869816f3c5c0d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNameTMP: {fileID: 289618099}
+  levelTMP: {fileID: 962904590}
+  experienceTMP: {fileID: 1631806542}
+  skillPointsTMP: {fileID: 183760757}
+  strengthText: {fileID: 1644581351}
+  defenseText: {fileID: 1681304398}
+  agilityText: {fileID: 885753801}
+  nameInputField: {fileID: 116089060}
+  namePanel: {fileID: 1308005460}
+  levelPanel: {fileID: 1665969277}
+  experienceBar: {fileID: 1771449647}
+  updateNameButton: {fileID: 844304990}
+  openNamePanelButton: {fileID: 422442887}
+  closeNamePanelButton: {fileID: 2124394461}
+  addStrengthButton: {fileID: 1913805300}
+  addDefenseButton: {fileID: 1572653164}
+  addAgilityButton: {fileID: 228568540}
+--- !u!4 &1853444146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853444144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1089.5698, y: 585.2643, z: 7.53742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1913805298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,3 +5190,4 @@ SceneRoots:
   - {fileID: 1852856603}
   - {fileID: 367651629}
   - {fileID: 1325091945}
+  - {fileID: 1853444146}

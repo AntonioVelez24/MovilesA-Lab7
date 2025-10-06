@@ -67,6 +67,14 @@ public class UnityPlayerAuth : MonoBehaviour
             await AuthenticationService.Instance.SignInWithUnityAsync(accessToken);
             Debug.Log("Login Succ");
             playerInfo = AuthenticationService.Instance.PlayerInfo;
+
+            var firstTime = await CheckFirstTimePlay();
+            if (firstTime)
+            {
+                // Si es la primera vez, asignamos los valores por defecto
+                await InitializePlayerData();
+            }
+
             var name = await AuthenticationService.Instance.GetPlayerNameAsync();
 
             OnSignedIn?.Invoke(playerInfo, name);
@@ -80,6 +88,28 @@ public class UnityPlayerAuth : MonoBehaviour
         {
             Debug.Log(ex);
         }
+    }
+
+    private async Task<bool> CheckFirstTimePlay()
+    {
+        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> { "playerLevel" });
+        return playerData.Count == 0; 
+    }
+
+    private async Task InitializePlayerData()
+    {
+        var playerData = new Dictionary<string, object>
+        {
+            { "playerLevel", 1 },
+            { "experience", 0 },
+            { "skillPoints", 0 },
+            { "strength", 5 },
+            { "defense", 5 },
+            { "agility", 3 }
+        };
+
+        await CloudSaveService.Instance.Data.Player.SaveAsync(playerData);
+        Debug.Log("Datos del jugador inicializados");
     }
 
     public async Task UpdateName(string newName)
